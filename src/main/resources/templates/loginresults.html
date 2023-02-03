@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="layouts/layout" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<body>
+
+    <div class="w-50" th:object="${loginModel}" layout:fragment="content">
+        <p>Username: <span th:text="*{username}"></span></p>
+        <p>Password: <span th:text="*{password}"></span></p>
+    </div>
+
+</body>
+</html>
