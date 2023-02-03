@@ -1,8 +1,6 @@
 package com.galvanize.datavalidation.services;
 
 import com.galvanize.datavalidation.models.OrderModel;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
