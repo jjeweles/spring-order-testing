@@ -4,13 +4,13 @@ import com.galvanize.datavalidation.models.OrderModel;
 
 import java.util.List;
 
-public interface OrdersDataAccessInterface {
+public interface OrdersDataAccessInterface <T> {
 
-    OrderModel getById(Long id);
-    List<OrderModel> getOrders();
-    List<OrderModel> searchOrders(String search);
-    long addOne(OrderModel order);
+    T getById(Long id);
+    List<T> getOrders();
+    List<T> searchOrders(String search);
+    long addOne(T order);
     boolean deleteOne(Long id);
-    OrderModel updateOne(long idToUpdate, OrderModel order);
+    T updateOne(long idToUpdate, T order);
 
 }

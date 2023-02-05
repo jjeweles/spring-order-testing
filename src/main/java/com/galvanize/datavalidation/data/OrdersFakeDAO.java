@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Repository
-public class OrdersFakeDAO implements OrdersDataAccessInterface {
+public class OrdersFakeDAO implements OrdersDataAccessInterface<OrderModel> {
 
     List<OrderModel> orders = new ArrayList<>();
 

@@ -15,7 +15,7 @@ import java.util.Map;
 
 @Repository
 @Primary
-public class OrderDataService implements OrdersDataAccessInterface {
+public class OrderDataService implements OrdersDataAccessInterface<OrderModel> {
 
     @Autowired
     DataSource dataSource;

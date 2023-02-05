@@ -8,6 +8,10 @@ public class OrderModel {
     float price;
     int quantity;
 
+    public OrderModel() {
+        super();
+    }
+
     public OrderModel(Long id, String orderNo, String productName, float price, int quantity) {
         super();
         this.id = id;
