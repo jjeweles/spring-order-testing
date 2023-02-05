@@ -1,14 +1,35 @@
 package com.galvanize.datavalidation.models;
 
-public class OrderModel {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
+@Table("orders")
+public class OrderEntity {
+
+    // OrderEntity is based on OrderModel
+    // Purpose is to connect OrderModel to the database
+
+    @Id
+    @Column("ID")
     Long id;
+
+    @Column("ORDER_NUMBER")
     String orderNo;
+
+    @Column("PRODUCT_NAME")
     String productName;
+
+    @Column("PRICE")
     float price;
+
+    @Column("QTY")
     int quantity;
 
-    public OrderModel(Long id, String orderNo, String productName, float price, int quantity) {
+    // need no args constructor for Spring Data JPA
+    public OrderEntity() {}
+
+    public OrderEntity(Long id, String orderNo, String productName, float price, int quantity) {
         super();
         this.id = id;
         this.orderNo = orderNo;
