@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="layouts/layout" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<body>
+<div layout:fragment="content">
+  <div class="w-50">
+    <form th:action="@{/order/search}" method="post" th:object="${searchModel}">
+      <div class="mb-3">
+        <label for="searchTermInput" class="form-label">Search For</label>
+        <input th:field="*{searchTerm}" type="text" class="form-control" id="searchTermInput" aria-describedby="searchTermHelp">
+        <div id="searchTermHelp" class="form-text">Add words to search orders for.</div>
+      </div>
+
+      <button type="submit" class="btn btn-dark">Search</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

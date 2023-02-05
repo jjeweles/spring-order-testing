@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="layouts/layout" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<body>
+    <div layout:fragment="content">
+        <div class="w-50">
+            <form th:action="@{/order/addNew}" method="post" th:object="${order}">
+                <div class="mb-3">
+                    <label for="orderNumberInput" class="form-label">Order Number</label>
+                    <input th:field="*{orderNo}" type="text" class="form-control" id="orderNumberInput" aria-describedby="orderNumberHelp">
+                    <div id="orderNumberHelp" class="form-text">Add an order number for this order.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="orderNameInput" class="form-label">Order Name</label>
+                    <input th:field="*{productName}" type="text" class="form-control" id="orderNameInput" aria-describedby="orderNameHelp">
+                    <div id="orderNameHelp" class="form-text">Add a name for this order.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="orderPriceInput" class="form-label">Order Price</label>
+                    <input th:field="*{price}" type="text" class="form-control" id="orderPriceInput" aria-describedby="orderPriceHelp">
+                    <div id="orderPriceHelp" class="form-text">Add a price for this order.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="orderQtyInput" class="form-label">Order Quantity</label>
+                    <input th:field="*{quantity}" type="text" class="form-control" id="orderQtyInput" aria-describedby="orderQtyHelp">
+                    <div id="orderQtyHelp" class="form-text">Add a quantity for this order.</div>
+                </div>
+
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="layouts/layout" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<body>
+    <div layout:fragment="content">
+      <div class="w-50 mt-3 mb-3">
+
+        <form action="#" th:action="@{/order/processUpdate}" th:object="${orderModel}" method="post">
+
+          <input type="hidden" th:field="${orderModel.id}" name="id">
+            <div class="input-group input-group-lg mb-2">
+              <span class="input-group-text" id="orderNo">Order #</span>
+              <input type="text" class="form-control" th:field="${orderModel.orderNo}">
+              <div class="fieldError">
+                <p th:if="${#fields.hasErrors('orderNo')}" th:errors="*{orderNo}">Order Number Error</p>
+              </div>
+            </div>
+
+            <div class="input-group input-group-lg mb-2">
+              <span class="input-group-text" id="productName">Product Name</span>
+              <input type="text" class="form-control" th:field="${orderModel.productName}">
+              <div class="fieldError">
+                <p th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}">Product Name Error</p>
+              </div>
+            </div>
+
+            <div class="input-group input-group-lg mb-2">
+              <span class="input-group-text" id="price">Price</span>
+              <input type="text" class="form-control" th:field="${orderModel.price}">
+              <div class="fieldError">
+                <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Product Pricing Error</p>
+              </div>
+            </div>
+
+            <div class="input-group input-group-lg mb-2">
+              <span class="input-group-text" id="quantity">Quantity</span>
+              <input type="text" class="form-control" th:field="${orderModel.quantity}">
+              <div class="fieldError">
+                <p th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}">Product Quantity Error</p>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark">Update</button>
+
+        </form>
+
+      </div>
+    </div>
