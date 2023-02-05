@@ -1,14 +1,10 @@
-package com.galvanize.datavalidation.services;
+package com.galvanize.datavalidation.data;
 
 import com.galvanize.datavalidation.models.OrderModel;
 
 import java.util.List;
 
-public interface OrderBusinessServiceInterface {
-
-    void test();
-    void init();
-    void destroy();
+public interface OrdersDataAccessInterface {
 
     OrderModel getById(Long id);
     List<OrderModel> getOrders();
