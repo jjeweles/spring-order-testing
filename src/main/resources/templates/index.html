@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Orders Application Home</title>
+        <link href="/css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="bg-body-tertiary">
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg bg-dark mb-5">
+            <div class="container-fluid">
+                <span class="navbar-brand text-warning text-uppercase" href="/">Orders App</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/login/">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/order/">Inventory</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/order/orderform">New Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/order/searchform">Search Orders</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/order/admin">Admin</a>
+                        </li>
+                    </ul>
+                    <!--                <form class="d-flex" role="search" th:action="@{/order/search}" method="post" th:object="${searchModel}">-->
+                    <!--                    <input th:field="*{searchTerm}" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+                    <!--                    <button class="btn btn-outline-dark" type="submit">Search</button>-->
+                    <!--                </form>-->
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container px-4 px-lg-5">
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="/imgs/order-hero.jpg" alt="..." /></div>
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light">Place Your Orders Through Our App!</h1>
+                    <p>An application for placing orders for your business. This is a demo application for practice purposes.
+                        Check out the admin menu to edit/delete inventory items. Shopping cart to place orders still
+                        to be added.</p>
+                    <a class="btn btn-dark" href="#inventory">Check Out Our Best Sellers!</a>
+                </div>
+            </div>
+            <!-- Content Row-->
+            <div class="row gx-4 gx-lg-5" id="inventory">
+                <div class="col-md-4 mb-5" th:each="order : ${orders}">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <h2 class="card-title" th:text="${order.productName}"></h2>
+                            <p class="card-text">
+                                <span class="font-weight-bold">Order #: </span><span th:text="${order.orderNo}"></span>
+                                <br>
+                                <span class="font-weight-bold">Price: </span><span th:text="${order.price}"></span>
+                                <br>
+                                <span class="font-weight-bold">Quantity: </span><span th:text="${order.quantity}"></span>
+                            </p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-warning btn-sm" href="#!">Order Item</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Built by Justin &copy; 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
